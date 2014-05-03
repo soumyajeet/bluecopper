@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+  <title><ui:insert name="title">Default title</ui:insert></title>
+</head>
+
+<body>
+<ui:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>
+
+<div id="header">
+    <ui:insert name="header">
+    	Header area.  See comments below this line in the source.
+    	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+    	<!-- <ui:include src="header.xhtml"/> -->
+    	<ul>
+	    	<li><a href="index.xhtml">Register</a></li>
+	    	<li><a href="userdetails.xhtml">User Details</a></li>
+    	</ul>
+    </ui:insert>
+    
+</div>
+
+
+<div id="content">
+  <ui:insert name="content">
+    	    	
+    	<h:form>
+    		<h:outputLabel for="fname" value="First Name" />
+    			<p:inputText id="fname" value="#{userRegHandler.fname}" required="true" 
+    				maxlenght="128" size="75" requiredMessage="Please provide First name" />
+    				<br />
+    		<h:outputLabel for="lname" value="Last Name" />
+    			<p:inputText id="lname" value="#{userRegHandler.lname}" required="true" 
+    				maxlenght="128" size="75" requiredMessage="Please provide Last name" />
+    				<br />
+    		<h:outputLabel for="email" value="Email" />
+    			<p:inputText id="email" value="#{userRegHandler.email}" required="true" 
+    				maxlenght="128" size="75" requiredMessage="Please provide Email" />		
+    			<br />	
+    		<h:commandButton value="Click Me!" onclick="alert('Hello World!');" action="#{userRegHandler.register()}" />		
+    	</h:form>
+    	
+    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+	  	<!-- <div> -->
+    	<!-- <ui:include src="content.xhtml"/> -->  
+    	<!-- </div> -->
+  </ui:insert>
+</div>
+
+<div id="footer">
+  <ui:insert name="footer">
+    	Footer area.  See comments below this line in the source.
+    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+		<!--<ui:include src="footer.xhtml"/>  -->
+  </ui:insert>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<title><ui:insert name="title">Default title</ui:insert></title>
+</head>
+
+<body>
+	
+
+	<div id="header">
+		<ui:insert name="header">
+    	Header area.  See comments below this line in the source.
+    	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+			<!-- <ui:include src="header.xhtml"/> -->
+			<ul>
+				<li><a href="index.xhtml">Register</a></li>
+				<li><a href="userdetails.xhtml">User Details</a></li>
+			</ul>
+		</ui:insert>
+	</div>
+
+
+	<div id="content">
+
+		<h:form>
+			<p:dataTable value="#{userDetailsHandler.details}" var="t" border="1">
+
+
+				<p:column>
+					<f:facet name="header">
+First name
+</f:facet>
+#{t.fname}
+</p:column>
+
+				<p:column>
+					<f:facet name="header">
+Last name
+</f:facet>
+#{t.lname}
+</p:column>
+
+				<p:column>
+					<f:facet name="header">
+Email
+</f:facet>
+#{t.email}
+</p:column>
+
+			</p:dataTable>
+
+		</h:form>
+
+	</div>
+
+	<div id="footer">
+		<ui:insert name="footer">
+    	Footer area.  See comments below this line in the source.
+    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+			<!--<ui:include src="footer.xhtml"/>  -->
+		</ui:insert>
+	</div>
+
+</body>
+
+</html>
