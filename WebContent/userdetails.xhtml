@@ -14,7 +14,7 @@
 
 	<div id="header">
 		<ui:insert name="header">
-    	Header area.  See comments below this line in the source.
+    	
     	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
 			<!-- <ui:include src="header.xhtml"/> -->
 			<ul>
@@ -31,26 +31,18 @@
 			<p:dataTable value="#{userDetailsHandler.details}" var="t" border="1">
 
 
-				<p:column>
-					<f:facet name="header">
-First name
-</f:facet>
-#{t.fname}
-</p:column>
+				<p:column headerText="First Name" style="width:24%">
+					<h:outputText value="#{t.fname}" />
+				</p:column>
 
-				<p:column>
-					<f:facet name="header">
-Last name
-</f:facet>
-#{t.lname}
-</p:column>
+				<p:column headerText="Last Name" style="width:24%">
+					<h:outputText value="#{t.lname}" />
+				</p:column>
 
-				<p:column>
-					<f:facet name="header">
-Email
-</f:facet>
-#{t.email}
-</p:column>
+				<p:column headerText="Email" style="width:24%">
+					<h:outputText value="#{t.email}" />
+				</p:column>
+				
 
 			</p:dataTable>
 
@@ -60,7 +52,7 @@ Email
 
 	<div id="footer">
 		<ui:insert name="footer">
-    	Footer area.  See comments below this line in the source.
+    	
     	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
 			<!--<ui:include src="footer.xhtml"/>  -->
 		</ui:insert>

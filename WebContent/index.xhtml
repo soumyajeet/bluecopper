@@ -14,10 +14,10 @@
 
 <div id="header">
     <ui:insert name="header">
-    	Header area.  See comments below this line in the source.
+    	
     	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
     	<!-- <ui:include src="header.xhtml"/> -->
-    	<ul>
+    	<ul style="list-style:none;float:left;width:120px;">
 	    	<li><a href="index.xhtml">Register</a></li>
 	    	<li><a href="userdetails.xhtml">User Details</a></li>
     	</ul>
@@ -29,7 +29,11 @@
 <div id="content">
   <ui:insert name="content">
     	    	
-    	<h:form>
+    	<h:form id="form">
+    		<p:panel header="AutoComplete" toggleable="true" id="panel">  
+        		<h:panelGrid columns="2" cellpadding="5">
+    	
+    	
     		<h:outputLabel for="fname" value="First Name" />
     			<p:inputText id="fname" value="#{userRegHandler.fname}" required="true" 
     				maxlenght="128" size="75" requiredMessage="Please provide First name" />
@@ -42,19 +46,19 @@
     			<p:inputText id="email" value="#{userRegHandler.email}" required="true" 
     				maxlenght="128" size="75" requiredMessage="Please provide Email" />		
     			<br />	
-    		<h:commandButton value="Click Me!" onclick="alert('Hello World!');" action="#{userRegHandler.register()}" />		
+    		<h:commandButton value="Click Me!" onclick="alert('Hello World!');" action="#{userRegHandler.register()}" />
+    		
+    			</h:panelGrid>  
+    		</p:panel> 		
     	</h:form>
     	
-    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
-	  	<!-- <div> -->
-    	<!-- <ui:include src="content.xhtml"/> -->  
-    	<!-- </div> -->
+    	
   </ui:insert>
 </div>
 
 <div id="footer">
   <ui:insert name="footer">
-    	Footer area.  See comments below this line in the source.
+    	
     	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
 		<!--<ui:include src="footer.xhtml"/>  -->
   </ui:insert>
