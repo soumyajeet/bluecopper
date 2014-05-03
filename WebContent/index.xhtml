@@ -6,7 +6,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 <head>
-  <title><ui:insert name="title">Default title</ui:insert></title>
+  <title><ui:insert name="title">Blue Copper Self Learner</ui:insert></title>
 </head>
 
 <body>
@@ -30,23 +30,23 @@
   <ui:insert name="content">
     	    	
     	<h:form id="form">
-    		<p:panel header="AutoComplete" toggleable="true" id="panel">  
+    		<p:panel header="Registration Form" toggleable="true" id="panel">  
         		<h:panelGrid columns="2" cellpadding="5">
     	
     	
     		<h:outputLabel for="fname" value="First Name" />
     			<p:inputText id="fname" value="#{userRegHandler.fname}" required="true" 
-    				maxlenght="128" size="75" requiredMessage="Please provide First name" />
-    				<br />
+    				 requiredMessage="Please provide First name" />
+    				
     		<h:outputLabel for="lname" value="Last Name" />
     			<p:inputText id="lname" value="#{userRegHandler.lname}" required="true" 
-    				maxlenght="128" size="75" requiredMessage="Please provide Last name" />
-    				<br />
+    				 requiredMessage="Please provide Last name" />
+    				
     		<h:outputLabel for="email" value="Email" />
     			<p:inputText id="email" value="#{userRegHandler.email}" required="true" 
-    				maxlenght="128" size="75" requiredMessage="Please provide Email" />		
-    			<br />	
-    		<h:commandButton value="Click Me!" onclick="alert('Hello World!');" action="#{userRegHandler.register()}" />
+    				 requiredMessage="Please provide Email" />		
+    				
+    		<h:commandButton value="Register!" action="#{userRegHandler.register()}" />
     		
     			</h:panelGrid>  
     		</p:panel> 		
