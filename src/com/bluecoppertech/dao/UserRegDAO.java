@@ -57,5 +57,29 @@ public class UserRegDAO {
 	return result;
 	
 	}
+	
+	public void deleteRow(String fname)
+	{
+		String myname = fname;
+		System.out.println(myname);
+		
+		String deleters = "DELETE FROM user_details WHERE firstname=?";
+		
+		System.out.println(deleters);
+		
+		QueryRunner run = new QueryRunner(defaultDS);
+		
+		int count1=0;	
+		try {
+			count1 +=run.update(deleters, fname);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
 
 }

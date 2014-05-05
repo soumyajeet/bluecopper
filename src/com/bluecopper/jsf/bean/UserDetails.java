@@ -27,6 +27,11 @@ public class UserDetails {
 		this.email = email;
 	}
 	
+	public String getDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 
 }

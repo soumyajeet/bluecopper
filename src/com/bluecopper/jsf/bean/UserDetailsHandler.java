@@ -5,12 +5,15 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import com.bluecoppertech.dao.DataAccessException;
 import com.bluecoppertech.dao.UserRegDAO;
+
+
 
 @ManagedBean
 @SessionScoped
@@ -24,7 +27,7 @@ public class UserDetailsHandler {
 
 
 	public List<UserDetails> getDetails() {
-		System.out.println("called");
+		//System.out.println("called");
 		return details;
 	}
 
@@ -36,7 +39,7 @@ public class UserDetailsHandler {
 	@PostConstruct
 	public void showdata()
 	{
-		System.out.println("hi");
+		//System.out.println("hi");
 		try {
 			details = userRegDAO.getUserList();
 		} catch (DataAccessException e) {
@@ -45,6 +48,18 @@ public class UserDetailsHandler {
 		}
 		
 	}
+	
+	
+	public String deletedata(String name)
+	{
+		//System.out.println("sdsd");
+		
+		userRegDAO.deleteRow(name);
+				
+		return "userdetails.xhtml?faces-redirect=true";
+	}
+	
+	
 	
 }
 

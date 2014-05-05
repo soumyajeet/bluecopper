@@ -8,8 +8,8 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/TOMEEE"/>
 	<classpathentry kind="lib" path="C:/apache-tomee-plus-1.5.1/lib/javaee-api-6.0-4-tomcat.jar"/>
 	<classpathentry kind="lib" path="C:/apache-tomee-plus-1.5.1/lib/openejb-core-4.5.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/TOMEE"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
