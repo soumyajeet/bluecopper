@@ -59,6 +59,7 @@ public class UserDetailsHandler {
 		return "userdetails.xhtml?faces-redirect=true";
 	}
 	
+		
 	
 	
 }
