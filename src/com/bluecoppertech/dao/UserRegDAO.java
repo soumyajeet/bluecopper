@@ -61,11 +61,9 @@ public class UserRegDAO {
 	public void deleteRow(String fname)
 	{
 		String myname = fname;
-		System.out.println(myname);
 		
 		String deleters = "DELETE FROM user_details WHERE firstname=?";
 		
-		System.out.println(deleters);
 		
 		QueryRunner run = new QueryRunner(defaultDS);
 		
@@ -79,7 +77,26 @@ public class UserRegDAO {
 		
 	}
 	
-	
+
+	public void editRow(String fname)
+	{
+		String editrows = "UPDATE user_details SET firstname = 'John', lastname = 'Blake', email = 'johny@blake.com' WHERE firstname=?";
+		
+		System.out.println(editrows);
+		
+		QueryRunner run = new QueryRunner(defaultDS);
+		
+		
+		
+		int count2=0;
+		
+		try {
+			count2 +=run.update(editrows);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 
 }

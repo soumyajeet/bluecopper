@@ -59,7 +59,18 @@ public class UserDetailsHandler {
 		return "userdetails.xhtml?faces-redirect=true";
 	}
 	
+	
+	public String editData(UserDetails t)
+	{
+		System.out.println("*****************");
+		String fname = t.fname;
+		String lname = t.lname;
+		String email = t.email;
 		
+		userRegDAO.editRow(fname);
+		
+		return null;
+	}
 	
 	
 }

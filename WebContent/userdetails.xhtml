@@ -13,7 +13,9 @@
 	
 
 		<h:form prependId="false">
-			<p:dataTable value="#{userDetailsHandler.details}" var="t" border="1">
+			<p:dataTable value="#{userDetailsHandler.details}" var="t" border="1" paginator="true" rows="5"
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                 rowsPerPageTemplate="5,10,15">
 
 
 				<p:column headerText="First Name" style="width:24%">
@@ -29,6 +31,8 @@
 				</p:column>
 				
 				<p:column headerText="Delete" style="width:24%">
+				
+					<h:commandButton action="#{userDetailsHandler.editData(t)}" value="Edit" />
 					 
 					<h:commandButton action="#{userDetailsHandler.deletedata(t.fname)}" value="Delete"/> 
 				</p:column>
