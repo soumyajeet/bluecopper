@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="title">IIIM</ui:insert></title>
+	<h:outputStylesheet library="site" name="css/pftheme.css" />
+	<h:outputStylesheet library="site" name="css/style.css" />
+	<h:outputStylesheet library="site" name="css/glyphicons.all.css" />
+	<h:outputScript library="site" name="js/bootstrap-collapse.js" />
+	<h:outputScript library="site" name="js/crumb.js" />
+	<h:outputScript library="site" name="js/jquery-1.9.1.js" />
+	<h:outputScript library="site" name="js/fixedColumns.js" />
+	<h:outputScript library="site" name="js/dataTable.js" />
+	<meta charset="UTF-8" />
+	<script type="text/javascript">
+		function display(inPut) {
+			var t = document.getElementById("hiddenButton");
+			if (inPut == "Dashboard") {
+				t.value = "";
+				remoteChangeCommand();
+			} else {
+				t.value = " > " + inPut + " > ";
+				remoteChangeCommand();
+			}
+		}
+	</script>
+</h:head>
+<h:body>
+	<ui:include name="pageheader" src="pageheader.xhtml" />
+	<!-- BEGIN #main -->
+	<div class="main" id="main">
+		<!-- BEGIN #main-nav -->
+		<div class="navigation" id="main-nav">
+			<h:form prependId="false">
+				<h:inputHidden id="hiddenButton"
+					value="#{breadcrumbHandler.buttonValue}" />
+				<p:remoteCommand name="remoteChangeCommand" process="hiddenButton" />
+				<ul class="nav" id="navigation_links">
+					<li class="active" onClick="javascript:display('Dashboard')"><a
+						href="#{request.contextPath}/dashboard.xhtml"><span
+							class="label label-inverse"> <i
+								class="icon-list icon-white"></i>
+						</span> Start <!--  <span class="badge badge-warning">10</span>--> </a></li>
+					<li onClick="javascript:display(this.textContent)"><a
+						href="#{redirectProperDashBoardHandler.page}">
+						<span class="label label-inverse"> <i
+								class="icon-tasks icon-white"></i>
+						</span>
+						Dashboard</a></li>
+					<li onClick="javascript:display(this.textContent)"><a
+						href="#{request.contextPath}/usermgmt/roleuserviewer.xhtml"
+						data-toggle="collapse" data-target="#forms"> 
+						<span class="label label-inverse"> <i
+								class="icon-user icon-white"></i>
+						</span>
+						User Management <!-- <span class="badge badge-info">1</span> --></a></li>
+					<li onClick="javascript:display(this.textContent)"><a
+						href="#{request.contextPath}/companymgmt/companyviewer.xhtml">
+						<span class="label label-inverse"> <i
+								class="icon-briefcase icon-white"></i>
+						</span>
+						Company	Management</a></li>
+					<li onClick="javascript:display(this.textContent)"><a
+						href="#{request.contextPath}/ordermgmt/ordersviewer.xhtml"
+						data-toggle="collapse" data-target="#forms">
+						<span class="label label-inverse"> <i
+								class="icon-leaf icon-white"></i>
+						</span>
+						Mandate Management</a></li>
+					<li onClick="javascript:display(this.textContent)"><a
+						href="#{request.contextPath}/pmanager/projectviewer.xhtml"
+						data-toggle="collapse" data-target="#forms">
+						<span class="label label-inverse"> <i
+								class="icon-calendar icon-white"></i>
+						</span>
+						Project Management</a></li>
+					<li><a href="#{request.contextPath}/paymentmgmt/paymentviewer.xhtml">
+						<span class="label label-inverse"> <i
+								class="icon-list-alt icon-white"></i>
+						</span>
+					Payment Milestone<!-- <span
+						class="badge badge-success">3</span> --></a></li>
+					<li onClick="javascript:display(this.textContent)"><a
+						href="#{request.contextPath}/report/report.xhtml">
+						<span class="label label-inverse"> <i
+								class="icon-signal icon-white"></i>
+						</span>
+						Reports</a></li>
+					<li onClick="javascript:display(this.textContent)"><a
+						href="#{request.contextPath}/taskmgmt/viewprojectforpc.xhtml">
+						<span class="label label-inverse"> <i
+								class="icon-tasks icon-white"></i>
+						</span>
+						Project	Task Management</a></li>
+					<li><a href="#" data-toggle="collapse" data-target="#enquiry"
+						id="c1">
+						<span class="label label-inverse"> <i
+								class="icon-chevron-down icon-white"></i>
+						</span>
+						Beneficiary Mobilization >></a>
+						<ul class="collapse out" id="enquiry">
+							<li
+								onClick="javascript:display('Beneficiary Mobilization &gt; '+this.textContent)"><h:commandLink
+									action="#{studentEnquiryHandler.makeObjectToNull}">Enquiry </h:commandLink></li>
+							<li
+								onClick="javascript:display('Beneficiary Mobilization &gt; '+this.textContent)"><h:commandLink
+									action="#{studentEnquiryViewer.visibiltygone}">Selection </h:commandLink></li>
+						</ul></li>
+					<li onClick="javascript:display(this.textContent)"><a
+						href="#{request.contextPath}/centermgmt/centerviewerform.xhtml">
+						<span class="label label-inverse"> <i
+								class="icon-th-list icon-white"></i>
+						</span>
+						Center Management</a></li>
+
+					<li><a href="#" data-toggle="collapse" data-target="#viewer"
+						id="c2">
+						<span class="label label-inverse"> <i
+								class="icon-chevron-down icon-white"></i>
+						</span>
+						Student Management >></a>
+						<ul class="collapse out" id="viewer">
+							<li onClick="javascript:display(this.textContent)"><a
+								href="#{request.contextPath}/studentmgmt/viewer/selectedstudent.xhtml">Viewer</a></li>
+							<li onClick="javascript:display(this.textContent)"><a
+								href="#{request.contextPath}/studentmgmt/batchassign/assignbacthperstudentdetails.xhtml">Batch
+									Assign</a></li>
+						</ul></li>
+
+
+
+
+					<li><a href="#" data-toggle="collapse" data-target="#bview"
+						id="c221">
+						<span class="label label-inverse"> <i
+								class="icon-chevron-down icon-white"></i>
+						</span>
+						Batch Management >></a>
+						<ul class="collapse out" id="bview">
+							<li onClick="javascript:display(this.textContent)"><a
+								href="#{request.contextPath}/batchmgmt/batchviewer.xhtml">Batch
+									Assignments</a></li>
+							<li onClick="javascript:display(this.textContent)"><a
+								href="#{request.contextPath}/batchmgmt/resourcedistribution/resourcedetails.xhtml">Resource
+									Management</a></li>
+
+						</ul></li>
+
+
+
+
+					<li><a href="#{request.contextPath}/classmgmt/facultyscheduling.xhtml">
+						<span class="label label-inverse"> <i
+								class="icon-bookmark icon-white"></i>
+						</span>
+					Class Management</a></li>
+					<li><a href="#">
+					<span class="label label-inverse"> <i
+								class="icon-eye-open icon-white"></i>
+						</span>
+					Human Resource</a></li>
+
+					<li><a href="#" data-toggle="collapse" data-target="#order"
+						id="c21">
+						<span class="label label-inverse"> <i
+								class="icon-chevron-down icon-white"></i>
+						</span>
+						Document Management >></a>
+						<ul class="collapse out" id="order">
+							<li onClick="javascript:display(this.textContent)"><a
+								href="#{request.contextPath}/docmgmt/orderdocmgmt/orderdocdownload.xhtml">Order
+									Documents</a></li>
+
+							<li onClick="javascript:display(this.textContent)"><a
+								href="#{request.contextPath}/docmgmt/projectdocmgmt/projectdocdownload.xhtml">Project
+									Documents</a></li>
+
+							<li onClick="javascript:display(this.textContent)"><a
+								href="#{request.contextPath}/docmgmt/stdntdocmgmt/studentdocdownload.xhtml">Student
+									Documents</a></li>
+							<li onClick="javascript:display(this.textContent)"><a
+								href="#{request.contextPath}/docmgmt/enquirymgmt/enquirydocdownload.xhtml">Enquiry
+									Documents</a></li>
+
+						</ul></li>
+					<li><a href="#">
+						<span class="label label-inverse"> <i
+								class="icon-wrench icon-white"></i>
+						</span>
+					Settings</a></li>
+				</ul>
+			</h:form>
+		</div>
+		<!-- END #main-nav -->
+
+		<div id="main-content" class="content">
+			<ui:insert name="content">Default content</ui:insert>
+		</div>
+	</div>
+
+	<div class="footer" id="footer">
+		<ui:include name="pagefooter" src="pagefooter.xhtml" />
+	</div>
+</h:body>
+</html>

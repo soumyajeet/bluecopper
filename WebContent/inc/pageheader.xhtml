@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:shiro="http://shiro.apache.org/tags">
+
+	<!-- BEGIN #navbar -->
+	<div class="navbar" id="navbar">
+
+		<div class="navbar-inner">
+			<a class="btn btn-navbar" data-toggle="collapse"
+				data-target=".nav-collapse"> <span class="icon-user icon-white"></span>
+			</a> <a class="brand" href="#"><img
+				src="#{resource['site/img/iiimfinal_v1.png']}" /></a>
+
+			<div class="nav-collapse collapse">
+
+				<p:growl id="growlheader" showDetail="false" sticky="false"
+					globalOnly="true" escape="true" autoUpdate="true" />
+
+				<shiro:user>
+					<ul class="nav pull-right">
+						<!--<li><a href="#"><i class="icon-asterisk icon-white"></i> Tickets <span class="notify">15</span></a></li>-->
+						<li><a href="#">Settings</a></li>
+						<li><a href="#{request.contextPath}/logout">logout</a></li>
+					</ul>
+				</shiro:user>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="breadcrumb">
+
+			<shiro:user>
+				<div class="logged pull-right">
+					<span>logged:</span> <a href="#">#{userSessionHandler.userSessionInfo.username}</a>
+				</div>
+			</shiro:user>
+			<ul>
+				<a href="#{request.contextPath}/dashboard.xhtml"
+					onClick="javascript:display(this.textContent)">Dashboard</a>
+				#{breadcrumbHandler.buttonValue}
+				<script type="text/javascript">
+					document.write(document.title);
+				</script>
+			</ul>
+			<!--<ul>
+				<script language="JavaScript">
+				
+					breadcrumbs('#{request.contextPath}/dashboard.xhtml',
+							'Breadcrumbs');
+				
+				</script>
+			</ul>-->
+		</div>
+
+	</div>
+	<!-- END #navbar -->
+</ui:composition>

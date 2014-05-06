@@ -1,0 +1,229 @@
+/*==================================== Primefaces Override ====================================*/
+
+.ui-widget {
+	font-size: 12px !important;
+}
+.ui-widget-overlay{
+	background-color: #000000;
+	background-image: none;
+	background-size: auto auto;
+	opacity: 0.8;
+}
+.detail .ui-widget-header{
+	position: relative;
+	top:-32px;
+	left:-4px;
+	background-color: transparent;
+	background-image: none;
+	border: none !important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	border: none;
+}
+.ui-tabs .ui-tabs-nav li a{
+	background-color: #e3e3e3;
+	border-color: none !important;
+	text-shadow: none;
+	font-family: 'Open Sans', sans-serif !important;
+	
+}
+.ui-tabs li.ui-tabs-selected a
+{
+  cursor: pointer;
+  border-top-width: 4px;
+  border-top-style: solid;
+  border-top-color: #ebad3c;
+  background-color: #FFFFFF !important;
+}
+
+.ui-growl-icon-close {
+    cursor: pointer;
+
+}
+.ui-growl-message p {
+    font: 12px "Lucida Console", Monaco, monospace;
+    letter-spacing: -1px;
+}
+.ui-growl {   
+    position:fixed;
+    top: 40%;
+    left: 37%;   
+    z-index:1; 
+}
+.ui-shadow
+{
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0) !important;
+  border-color: #9f9f9f !important;
+  -moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	
+}
+.ui-growl-title
+{
+  font-weight: 400 !important;
+  font-family: 'Open Sans', sans-serif !important;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 7px;
+  padding-left: 0px;
+  display: block;
+}
+
+
+
+
+
+.ui-datatable tbody {
+	border: none !important;
+	border-color: red !important;
+	
+}
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td
+{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: none !important;
+  font-size: 13px;
+  font-weight: bold;
+
+ 
+  
+}
+.ui-datatable {
+	margin-top: 10px;
+	border: none !important;
+	border-color: red;
+}
+
+.ui-datatable thead th, .ui-datatable tfoot td
+{
+  text-align: left !important;
+  font-weight: 500;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+}
+
+.ui-datatable tbody td
+{
+  border: none !important;
+}
+
+.ui-datatable .ui-icon
+{
+  display: hidden;
+  text-indent: -99999px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-repeat: no-repeat;
+}
+
+
+
+
+.ui-dialog-titlebar
+{
+	background-color: #FFFFFF !important;
+	background-image: none !important;
+}
+.ui-dialog .ui-dialog-buttonpane
+{
+  text-align: center;
+  border: none;
+  background-image: none;
+  margin-top: 0.5em;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0.3em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+  padding-left: 0.4em;
+}
+/*
+.ui-button{
+  background-color: aqua !important;
+}
+*/
+
+.ui-panelgrid td, .ui-panelgrid tr
+{
+    border-style: none !important;
+}
+.ui-datatable thead th
+{
+    background-color: #505050 !important;
+    
+
+}
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+    background: none scroll 0 0 #FFFFFF;
+    color: #555555;
+	border:1px solid #BBBBBB;
+	font-weight: bold !important;
+	box-shadow: none !important;
+	}
+.ui-selectonemenu-label { 
+    border:1px solid #BBBBBB !important;
+}
+.ui-datatable .row-medium {
+  width:1%;
+}
+ .row-large {
+  width: 70px !important;
+}
+ .row-xlarge {
+  width: 90px !important;
+}
+ .row-xxlarge {
+  width: 110px !important;
+}
+.highlight1 {
+    background: #fafafa;
+}
+.highlight2 {
+    background: #ffffff;
+}
+.indirowstyle {
+    background: #D7C0E7;
+}
+.batchtemplaterow {
+    background: #FFE6BF;
+}
+.indibatchrow {
+    background: #C2E0FF;
+}
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td
+{
+    padding: 4px !important;
+    white-space: normal !important;
+    word-break:break-all;
+}
+.dialogCss{
+    left: 50%;
+    top: 50%;
+    margin-left: -150;
+    margin-top: -100;
+}
+.ui-dialog .ui-dialog-title
+{
+	color:#030303;
+}
+.ui-picklist
+{
+	overflow: hidden !important;
+}
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error
+{
+	
+    border: 1px solid #CD0A0A !important;
+}
+.ui-messages-info-icon, .ui-messages-warn-icon, .ui-messages-error-icon, .ui-messages-fatal-icon
+{
+ background: none scroll 0 0 #FFFFFF;
+	
+}
+.ui-messages-info-icon, .ui-messages-warn-icon, .ui-messages-error-icon, .ui-messages-fatal-icon
+{
+	height: 0;
+}

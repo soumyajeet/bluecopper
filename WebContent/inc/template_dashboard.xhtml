@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="title">IIIM</ui:insert></title>
+	<h:outputStylesheet library="site" name="css/pftheme.css" />
+	<h:outputStylesheet library="site" name="css/style.css" />
+	<h:outputStylesheet library="site" name="css/glyphicons.all.css" />
+	<meta charset="UTF-8" />
+	<script type="text/javascript">
+	function display(inPut) {
+		var t = document.getElementById("hiddenButton");		
+		if(inPut=="Dashboard")
+			{
+			t.value = "";			
+			remoteChangeCommand();
+			}
+		else {
+		t.value = " > "+inPut+" > ";			
+		remoteChangeCommand();
+	}
+	}
+	</script>
+</h:head>
+<h:body>
+	<ui:include name="pageheader" src="pageheader.xhtml" />
+	<!-- BEGIN #main -->
+	<div class="main" id="main">
+	</div>
+	<ui:insert name="content">Default content</ui:insert>
+	<div class="footer" id="footer">
+		<ui:include name="pagefooter" src="pagefooter.xhtml" />
+	</div>
+</h:body>
+</html>
